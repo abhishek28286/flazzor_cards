@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Visiting Card Catalog | Order Online</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .search-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: #2a5298;
+            color: white;
+            border-color: #2a5298;
+        }
+        .category-title {
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            color: #1e3c72;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .card-header h3 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .card-body p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .btn-container {
+            padding: 15px 20px;
+            background: #fff;
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .btn-demo {
+            background: #e9ecef;
+            color: #333;
+        }
+        .btn-demo:hover {
+            background: #dde2e6;
+        }
+        .btn-order {
+            background: #25d366;
+            color: white;
+        }
+        .btn-order:hover {
+            background: #20ba5a;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #333;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Professional Digital Visiting Cards</h1>
+        <p>Choose your business category, select a design, and get your digital card instantly!</p>
+    </header>
+
+    <div class="container">
+        <!-- Category Filter Buttons -->
+        <div class="search-filter">
+            <button class="filter-btn active" onclick="filterCategory('all')">All Templates</button>
+            <button class="filter-btn" onclick="filterCategory('services')">Daily Services</button>
+            <button class="filter-btn" onclick="filterCategory('shops')">Retail Shops</button>
+            <button class="filter-btn" onclick="filterCategory('transport')">Transport & Travel</button>
+            <button class="filter-btn" onclick="filterCategory('professionals')">Professionals & Experts</button>
+            <button class="filter-btn" onclick="filterCategory('general')">General / Custom</button>
+        </div>
+
+        <!-- DAILY SERVICES -->
+        <h2 class="category-title">Daily Services & Home Repairs</h2>
+        <div class="grid">
+            <div class="card" data-category="services">
+                <div class="card-header"><h3>Electrician & Plumber</h3></div>
+                <div class="card-body"><p>Perfect for wiring, pipe fitting, and home maintenance works.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Electrician%20Digital%20Visiting%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="services">
+                <div class="card-header"><h3>AC & Appliance Repair</h3></div>
+                <div class="card-body"><p>For AC service, refrigerator, washing machine & repair experts.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20AC%20Appliance%20Repair%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="services">
+                <div class="card-header"><h3>Carpenter & Woodwork</h3></div>
+                <div class="card-body"><p>Ideal for furniture making, modular setup, and woodwork.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Carpenter%20Visiting%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="services">
+                <div class="card-header"><h3>Painter & False Ceiling</h3></div>
+                <div class="card-body"><p>Showcase home painting, waterproofing, and false ceiling works.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Painter%20Visiting%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- RETAIL SHOPS -->
+        <h2 class="category-title">Retail Shops & Local Stores</h2>
+        <div class="grid">
+            <div class="card" data-category="shops">
+                <div class="card-header"><h3>Grocery & Kirana Store</h3></div>
+                <div class="card-body"><p>For daily essentials, departmental stores, and kirana outlets.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Kirana%20Store%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="shops">
+                <div class="card-header"><h3>Garments & Boutique</h3></div>
+                <div class="card-body"><p>For clothing stores, fashion wear, and tailoring boutiques.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Garments%20Boutique%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="shops">
+                <div class="card-header"><h3>Hardware & Sanitary Store</h3></div>
+                <div class="card-body"><p>For building materials, hardware items, and pipes suppliers.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Hardware%20Store%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="shops">
+                <div class="card-header"><h3>Sweet Shop & Bakery</h3></div>
+                <div class="card-body"><p>For sweet marts, confectioneries, bakeries, and cafes.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Bakery%20Sweet%20Shop%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSPORT & TRAVEL -->
+        <h2 class="category-title">Transport, Vehicles & Travel</h2>
+        <div class="grid">
+            <div class="card" data-category="transport">
+                <div class="card-header"><h3>Cab & Taxi Services</h3></div>
+                <div class="card-body"><p>For tour cabs, personal car rentals, and taxi drivers.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Taxi%20Cab%20Service%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="transport">
+                <div class="card-header"><h3>Packers & Movers</h3></div>
+                <div class="card-body"><p>For household shifting, transport loading, and logistic services.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Packers%20Movers%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="transport">
+                <div class="card-header"><h3>Vehicle Mechanic & Workshop</h3></div>
+                <div class="card-body"><p>For car/bike repair workshops, puncture shops, and mechanics.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Mechanic%20Workshop%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROFESSIONALS -->
+        <h2 class="category-title">Professionals, Agents & Services</h2>
+        <div class="grid">
+            <div class="card" data-category="professionals">
+                <div class="card-header"><h3>Home Tutor & Classes</h3></div>
+                <div class="card-body"><p>For private tutors, coaching classes, and educational trainers.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Home%20Tutor%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="professionals">
+                <div class="card-header"><h3>Beauty Parlour & Makeup</h3></div>
+                <div class="card-body"><p>For bridal makeup artists, salons, and beauty experts.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Beauty%20Parlour%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="professionals">
+                <div class="card-header"><h3>Property Real Estate Dealer</h3></div>
+                <div class="card-body"><p>For land brokers, flat sellers, and real estate consultants.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Real%20Estate%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card" data-category="professionals">
+                <div class="card-header"><h3>Insurance & Financial Advisor</h3></div>
+                <div class="card-body"><p>For LIC agents, loan consultants, and financial advisors.</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20order%20Insurance%20Advisor%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- GENERAL / CUSTOM -->
+        <h2 class="category-title">General & Universal Business</h2>
+        <div class="grid">
+            <div class="card" data-category="general">
+                <div class="card-header"><h3>Universal / Custom Business</h3></div>
+                <div class="card-body"><p>Don't see your category? Get a fully customized card designed for any work!</p></div>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-demo">Preview</a>
+                    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20a%20Custom%20Universal%20Digital%20Visiting%20Card." class="btn btn-order" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Digital Visiting Card Services. Powered by Flazzor.</p>
+    </footer>
+
+    <script>
+        function filterCategory(category) {
+            // Update active button
+            let buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            let cards = document.querySelectorAll('.card');
+            let titles = document.querySelectorAll('.category-title');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            titles.forEach(title => {
+                if (category === 'all') {
+                    title.style.display = 'block';
+                } else {
+                    title.style.display = 'none'; // Simplify view when filtered
+                }
+            });
+        }
+    </script>
+</body>
+</html>
