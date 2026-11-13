@@ -1,626 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flazzor Digital Visiting Cards - Catalog & Live Preview</title>
+    <title>Flazzor Interior - Digital Visiting Card</title>
     <style>
-        :root {
-            --navy: #0b1c3c;
-            --gold: #d4af37;
-            --light-gold: #f3e5ab;
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --whatsapp: #25d366;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
         body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding-bottom: 50px;
-        }
-        header {
-            background: linear-gradient(135deg, #0b1c3c, #1e3c72);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            border-bottom: 3px solid var(--gold);
-        }
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-        header p {
-            font-size: 1.05rem;
-            color: var(--light-gold);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        /* MASTER VISITING CARD PREVIEW (EXACT LOOK MATCH) */
-        .master-preview-section {
-            margin-bottom: 50px;
-        }
-        .section-heading {
-            text-align: center;
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            color: var(--light-gold);
-            letter-spacing: 0.5px;
-        }
-        
-        .physical-card-mockup {
-            background: linear-gradient(135deg, #071328, #0f254f);
-            border: 3px solid var(--gold);
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .card-top-row {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 20px;
-            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 20px;
-        }
-        .brand-logo-area h2 {
-            font-size: 2.5rem;
-            color: #ff4757;
-            font-weight: 900;
-            letter-spacing: 1px;
-            font-family: 'Arial Black', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        .brand-logo-area h2 span {
-            color: #3742fa;
-        }
-        .brand-logo-area p {
-            font-size: 0.95rem;
-            color: var(--light-gold);
-            font-weight: 600;
-            margin-top: -5px;
-        }
-        .brand-logo-area .tagline-sub {
-            font-size: 0.8rem;
-            color: #cbd5e1;
-            letter-spacing: 1px;
-            margin-top: 3px;
-        }
-        .top-contacts {
-            text-align: right;
-        }
-        .top-contacts p {
-            font-size: 1.05rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 4px;
-        }
-
-        .card-body-row {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 25px;
+            justify-content: center;
             align-items: center;
+            min-height: 100vh;
         }
-        .owner-details h3 {
-            font-size: 1.8rem;
-            color: #fff;
-            margin-bottom: 5px;
+        .card-container {
+            background: #1e293b;
+            border: 2px solid #38bdf8;
+            border-radius: 16px;
+            max-width: 450px;
+            width: 100%;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            text-align: center;
         }
-        .owner-details p {
-            font-size: 1rem;
-            color: var(--light-gold);
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #38bdf8;
+            letter-spacing: 1px;
+        }
+        .tagline {
+            font-size: 14px;
+            color: #94a3b8;
             margin-bottom: 15px;
         }
-        .services-box {
-            background: rgba(255,255,255,0.05);
-            padding: 12px 18px;
-            border-radius: 8px;
-            border-left: 4px solid var(--gold);
-        }
-        .services-box h4 {
-            font-size: 0.9rem;
-            color: var(--gold);
-            margin-bottom: 6px;
-        }
-        .services-box ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px 15px;
-            font-size: 0.85rem;
-            color: #e2e8f0;
-        }
-        .services-box li::before {
-            content: "▪ ";
-            color: var(--gold);
-        }
-
-        .card-right-info {
-            background: rgba(0,0,0,0.3);
-            padding: 15px;
-            border-radius: 10px;
-            min-width: 260px;
-            border: 1px solid rgba(212,175,55,0.2);
-        }
-        .card-right-info p {
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            margin-bottom: 6px;
-        }
-        
-        .hardware-brands {
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            text-align: center;
-            font-size: 1.1rem;
+        .name {
+            font-size: 24px;
             font-weight: bold;
-            color: var(--light-gold);
-            letter-spacing: 2px;
-        }
-
-        /* THEMES COMPARISON GRID (15+ CARDS) */
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        .theme-card-box {
-            background: var(--card-bg);
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s;
-        }
-        .theme-card-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
-        }
-        .theme-header {
-            background: #111827;
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .theme-header h3 {
-            font-size: 1.15rem;
-            color: var(--light-gold);
-        }
-        .theme-header span {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .theme-body {
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            flex-grow: 1;
-        }
-        .theme-body ul {
-            list-style: none;
+            color: #f8fafc;
             margin-top: 10px;
         }
-        .theme-body li {
-            margin-bottom: 6px;
-            font-size: 0.85rem;
+        .qualification {
+            font-size: 14px;
+            color: #38bdf8;
+            margin-bottom: 20px;
         }
-        .theme-body li::before {
-            content: "✓ ";
-            color: var(--whatsapp);
-            font-weight: bold;
+        .section-title {
+            text-align: left;
+            font-size: 16px;
+            color: #fbbf24;
+            border-bottom: 1px solid #475569;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
-        .theme-footer {
-            padding: 15px;
-            background: rgba(0,0,0,0.2);
-            text-align: center;
+        ul {
+            text-align: left;
+            padding-left: 20px;
+            color: #cbd5e1;
+            font-size: 14px;
+            margin: 0 0 20px 0;
         }
-        .btn-order-theme {
-            display: block;
-            width: 100%;
-            background: var(--whatsapp);
+        ul li {
+            margin-bottom: 5px;
+        }
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .btn {
+            background: #2563eb;
             color: white;
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.2s;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
         }
-        .btn-order-theme:hover {
-            background: #20ba5a;
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: #070a14;
-            color: var(--text-muted);
-            margin-top: 60px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+        .btn-whatsapp { background: #25d366; }
+        .btn-call { background: #0284c7; }
+        .btn-web { background: #4f46e5; }
+        .btn-map { background: #ea580c; }
+        .full-width {
+            grid-column: span 2;
+        }
+        .footer-info {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 20px;
+            border-top: 1px solid #334155;
+            padding-top: 10px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Flazzor Digital Visiting Cards</h1>
-        <p>Explore Master Preview & Compare All Design Variations on One Page</p>
-    </header>
+    <div class="card-container">
+        <div class="logo">FLAZZOR</div>
+        <div class="tagline">A complete interior Shopee<br><em>Elegant | Customizable | Affordable</em></div>
+        
+        <div class="name">Abhishek Agrawal</div>
+        <div class="qualification">B.Sc, MBA, Interior Designer</div>
 
-    <div class="container">
+        <div class="section-title">Manufacturer of :</div>
+        <ul>
+            <li>Modular Kitchen</li>
+            <li>Modular Wardrobe</li>
+            <li>Modular Bed</li>
+            <li>Modular Dresser</li>
+            <li>Sofa • Tea table • Dining</li>
+            <li>Modular Office furniture</li>
+        </ul>
 
-        <!-- 1. MASTER VISITING CARD PREVIEW (EXACT BRAND LOOK) -->
-        <div class="master-preview-section">
-            <h2 class="section-heading">🌟 Flazzor Master Visiting Card Preview</h2>
-            
-            <div class="physical-card-mockup">
-                <!-- Top Header row -->
-                <div class="card-top-row">
-                    <div class="brand-logo-area">
-                        <h2>FLAZZOR</h2>
-                        <p>A complete interior shoppee</p>
-                        <div class="tagline-sub">Elegant | Customizable | Affordable</div>
-                    </div>
-                    <div class="top-contacts">
-                        <p>📞 98280 28286</p>
-                        <p>📞 74250 61880</p>
-                    </div>
-                </div>
+        <div class="section-title">Contact & Address</div>
+        <p style="font-size: 13px; text-align: left; color: #cbd5e1; margin: 5px 0;">
+            📍 47, Shahi Complex, Sector 11, Udaipur, Rajasthan 313001
+        </p>
 
-                <!-- Middle Body row -->
-                <div class="card-body-row">
-                    <div class="owner-details">
-                        <h3>Abhishek Agrawal</h3>
-                        <p>B.Sc, MBA, Interior Designer</p>
-                        
-                        <div class="services-box">
-                            <h4>Manufacturer of :</h4>
-                            <ul>
-                                <li>Modular Kitchen</li>
-                                <li>Modular Wardrobe</li>
-                                <li>Modular Bed</li>
-                                <li>Modular Dresser</li>
-                                <li>Sofa • Tea table • Dining</li>
-                                <li>Modular Office furniture</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="card-right-info">
-                        <p>📍 47, Shahi Complex, Sector 11, Udaipur, Rajasthan 313001</p>
-                        <p>✉️ abhishek28286@gmail.com</p>
-                        <p>🌐 www.flazzor.in</p>
-                    </div>
-                </div>
-
-                <!-- Bottom Brands row -->
-                <div class="hardware-brands">
-                    HÄFELE &nbsp;|&nbsp; Godrej &nbsp;|&nbsp; Hettich
-                </div>
-            </div>
+        <!-- एक्टिवेट किए गए बटन्स (Interactive Buttons) -->
+        <div class="btn-grid">
+            <a href="tel:9828028286" class="btn btn-call">📞 Call 98280</a>
+            <a href="tel:7425061880" class="btn btn-call">📞 Call 7425</a>
+            <a href="https://wa.me/919828028286?text=Hello%20Flazzor%20Interior,%20I%20want%20to%20inquire%20about%20modular%20furniture." class="btn btn-whatsapp full-width" target="_blank">💬 WhatsApp Chat</a>
+            <a href="mailto:abhishek28286@gmail.com" class="btn btn-web">✉️ Email Us</a>
+            <a href="https://www.flazzor.in" class="btn btn-web" target="_blank">🌐 Website</a>
+            <a href="https://maps.google.com/?q=Shahi+Complex+Sector+11+Udaipur" class="btn btn-map full-width" target="_blank">🗺️ Locate on Google Maps</a>
         </div>
 
-        <!-- 2. ALL DESIGN VARIATIONS COMPARISON GRID (15+ THEMES) -->
-        <h2 class="section-heading" style="margin-top: 50px;">📋 Compare All 15+ Design Variations</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Ek hi page par sabhi themes dekhein aur apni pasand ka layout chun kar order karein.</p>
-
-        <div class="catalog-grid">
-
-            <!-- Theme 1 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 01: Royal Navy & Gold</h3>
-                    <span>Executive Corporate Style</span>
-                </div>
-                <div class="theme-body">
-                    <p>Rich dark navy background with golden borders, perfect for premium interior firms.</p>
-                    <ul>
-                        <li>3 Contact Numbers</li>
-                        <li>Social Hub (IG, FB, LinkedIn)</li>
-                        <li>Work Gallery Section</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2001%20Royal%20Navy%20Gold." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 2 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 02: Clean Minimalist White</h3>
-                    <span>Modern Showroom Style</span>
-                </div>
-                <div class="theme-body">
-                    <p>Clean, bright layout designed for retail stores and general businesses.</p>
-                    <ul>
-                        <li>Direct WhatsApp Button</li>
-                        <li>Google Map Location</li>
-                        <li>Working Hours Display</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2002%20Clean%20Minimalist." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 3 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 03: Dark Obsidian Luxury</h3>
-                    <span>High-End Showroom Look</span>
-                </div>
-                <div class="theme-body">
-                    <p>Deep dark theme with glowing accents for high-end luxury products and jewellery.</p>
-                    <ul>
-                        <li>Full Social Suite</li>
-                        <li>PDF Catalog Link</li>
-                        <li>Direct Inquiry Form</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2003%20Dark%20Obsidian." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 4 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 04: Artisan & Technician</h3>
-                    <span>Bold Industrial Layout</span>
-                </div>
-                <div class="theme-body">
-                    <p>Built specifically for carpenters, electricians, plumbers, and mechanics.</p>
-                    <ul>
-                        <li>Multiple Direct Helplines</li>
-                        <li>Service Area Highlights</li>
-                        <li>Project Photo Grid</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2004%20Artisan%20Technician." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 5 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 05: Creative Studio</h3>
-                    <span>Vibrant & Artistic Layout</span>
-                </div>
-                <div class="theme-body">
-                    <p>Ideal for photographers, makeup artists, event planners, and salons.</p>
-                    <ul>
-                        <li>Instagram & YouTube Feeds</li>
-                        <li>Portfolio Showcase</li>
-                        <li>Quick Booking Option</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2005%20Creative%20Studio." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 6 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 06: Healthcare & Educator</h3>
-                    <span>Soft & Professional Expert</span>
-                </div>
-                <div class="theme-body">
-                    <p>Suited for doctors, clinics, home tutors, and educational trainers.</p>
-                    <ul>
-                        <li>Appointment Link</li>
-                        <li>Clinic / Tuition Address Map</li>
-                        <li>Multiple Contact Lines</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2006%20Healthcare%20Educator." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 7 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 07: Transport & Logistics</h3>
-                    <span>Dynamic Fleet & Travel Style</span>
-                </div>
-                <div class="theme-body">
-                    <p>For cab services, packers & movers, and transport agencies.</p>
-                    <ul>
-                        <li>Direct Booking Helpline</li>
-                        <li>Driver Contact Numbers</li>
-                        <li>Route Highlights</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2007%20Transport%20Logistics." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 8 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 08: Real Estate & Broker</h3>
-                    <span>Property Dealer Layout</span>
-                </div>
-                <div class="theme-body">
-                    <p>Designed for property dealers, land brokers, and real estate consultants.</p>
-                    <ul>
-                        <li>Property Listing Gallery</li>
-                        <li>Direct Agent Call Button</li>
-                        <li>Office Map Location</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2008%20Real%20Estate." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 9 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 09: Food & Bakery Mart</h3>
-                    <span>Delicious Warm Tones</span>
-                </div>
-                <div class="theme-body">
-                    <p>For sweet shops, bakeries, cafes, and restaurants.</p>
-                    <ul>
-                        <li>Menu / Catalog Link</li>
-                        <li>Order Online via WhatsApp</li>
-                        <li>Store Location Map</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2009%20Food%20Bakery." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 10 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 10: Hardware & Sanitary</h3>
-                    <span>Industrial Supply Theme</span>
-                </div>
-                <div class="theme-body">
-                    <p>For building materials, hardware stores, and sanitary suppliers.</p>
-                    <ul>
-                        <li>Product Inquiry Button</li>
-                        <li>Wholesale Helpline Numbers</li>
-                        <li>Store Address & Timing</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2010%20Hardware%20Sanitary." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 11 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 11: Garments & Boutique</h3>
-                    <span>Fashion & Tailoring Style</span>
-                </div>
-                <div class="theme-body">
-                    <p>For clothing stores, fashion wear, and custom tailoring boutiques.</p>
-                    <ul>
-                        <li>Design Gallery Showcase</li>
-                        <li>Instagram Feed Integration</li>
-                        <li>Direct Booking / Inquiry</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2011%20Garments%20Boutique." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 12 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 12: Financial & Insurance</h3>
-                    <span>Trust & Security Blue</span>
-                </div>
-                <div class="theme-body">
-                    <p>For LIC agents, loan consultants, and financial advisors.</p>
-                    <ul>
-                        <li>Consultation Booking Form</li>
-                        <li>Professional Credentials</li>
-                        <li>Secure Direct Call Links</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2012%20Financial%20Advisor." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 13 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 13: Event & Wedding Planner</h3>
-                    <span>Festive & Elegant Look</span>
-                </div>
-                <div class="theme-body">
-                    <p>For wedding planners, decorators, caterers, and event management.</p>
-                    <ul>
-                        <li>Event Gallery Showcase</li>
-                        <li>Video Highlights Link</li>
-                        <li>Direct WhatsApp Inquiry</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2013%20Event%20Planner." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 14 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 14: Fitness & Gym Trainer</h3>
-                    <span>Energizing Dark & Neon</span>
-                </div>
-                <div class="theme-body">
-                    <p>For gym trainers, fitness coaches, yoga instructors, and sports clubs.</p>
-                    <ul>
-                        <li>Membership Inquiry Button</li>
-                        <li>Workout Video Links</li>
-                        <li>Timing & Location Info</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2014%20Fitness%20Gym." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
-            <!-- Theme 15 -->
-            <div class="theme-card-box">
-                <div class="theme-header">
-                    <h3>Theme 15: Universal Custom Card</h3>
-                    <span>Flexible Tailored Layout</span>
-                </div>
-                <div class="theme-body">
-                    <p>Don't see your category? Get a fully customized card designed for any work.</p>
-                    <ul>
-                        <li>Custom Sections Included</li>
-                        <li>All Social Links & Gallery</li>
-                        <li>Personalized Assistance</li>
-                    </ul>
-                </div>
-                <div class="theme-footer">
-                    <a href="https://wa.me/917425061880?text=Hello,%20I%20want%20to%20order%20Theme%2015%20Universal%20Custom." class="btn-order-theme" target="_blank">Order This Theme</a>
-                </div>
-            </div>
-
+        <div class="footer-info">
+            Partners: HAFELE | Godrej | Hettich
         </div>
-
     </div>
-
-    <footer>
-        <p>&copy; 2026 Flazzor Interior, Udaipur. All Rights Reserved. | Helpline: 7425061880</p>
-    </footer>
 
 </body>
 </html>
