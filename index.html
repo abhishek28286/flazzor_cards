@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flazzor Interior - Digital Visiting Card</title>
+    <title>Flazzor Interiors - Digital Visiting Card</title>
     <style>
         body {
             margin: 0;
@@ -13,11 +13,13 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
         }
         .card-container {
             position: relative;
             width: 100%;
-            max-width: 650px;
+            max-width: 700px;
         }
         .card-image {
             width: 100%;
@@ -26,42 +28,70 @@
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
-        /* क्लिक करने योग्य हॉटस्पॉट क्षेत्र */
+        
+        /* हॉटस्पॉट स्टाइल्स (क्लिकेबल एरिया) */
         .hotspot {
             position: absolute;
             cursor: pointer;
-            background: rgba(0, 0, 0, 0.0); /* अदृश्य लेयर */
+            background: rgba(0, 0, 0, 0.0); /* टेस्टिंग के लिए हल्का रंग देख सकते हैं */
         }
-        /* चेकिंग के लिए इसे हटा सकते हैं */
-        /* .hotspot:hover { background: rgba(56, 189, 248, 0.3); border: 1px dashed #38bdf8; } */
 
-        /* आपके कार्ड के अनुसार बिल्कुल सटीक पोजीशन */
-        .phone-1 { top: 2%; right: 4%; width: 26%; height: 6%; }     /* 98280 28286[span_1](start_span)[span_1](end_span) */
-        .phone-2 { top: 8%; right: 4%; width: 26%; height: 6%; }     /* 74250 61880[span_2](start_span)[span_2](end_span) */
-        
-        /* नीचे दाएं कोने के लिए बिल्कुल सही अलग हिस्से */
-        .email-link { bottom: 22%; right: 5%; width: 45%; height: 6%; } /* abhishek28286@gmail.com[span_3](start_span)[span_3](end_span) */
-        .web-link   { bottom: 14%; right: 5%; width: 45%; height: 6%; } /* www.flazzor.in[span_4](start_span)[span_4](end_span) */
-        
-        /* बीच का हिस्सा (WhatsApp या पूरी इमेज के लिए) */
-        .whatsapp-float { bottom: 35%; left: 10%; width: 35%; height: 25%; } 
+        /* ऊपर दिए गए फोन नंबर */
+        .phone-1 { top: 22px; right: 25px; width: 35%; height: 6%; }     
+        .phone-2 { top: 70px; right: 25px; width: 35%; height: 6%; }     
+
+        /* नीचे दिए गए चार बटन (Website, Email, WhatsApp, Facebook) */
+        .btn-website   { bottom: 2%; left: 3%; width: 22%; height: 10%; }
+        .btn-email     { bottom: 2%; left: 27%; width: 22%; height: 10%; }
+        .btn-whatsapp  { bottom: 2%; left: 51%; width: 22%; height: 10%; }
+        .btn-facebook  { bottom: 2%; left: 75%; width: 22%; height: 10%; }
+
+        /* बड़ा 'Save Contact' बटन */
+        .save-contact-btn {
+            display: block;
+            width: 90%;
+            max-width: 350px;
+            margin: 20px auto;
+            background: #25d366;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            transition: 0.3s;
+        }
+        .save-contact-btn:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
 
 <div class="card-container">
-    <!-- आपकी ओरिजिनल JPG इमेज -->
-    <img src="card.jpg" alt="Flazzor Interior Visiting Card" class="card-image">
+    <!-- आपकी विजिटिंग कार्ड इमेज (GitHub पर इसका नाम card.jpg रखें) -->
+    <img src="card.jpg" alt="Flazzor Interiors Digital Visiting Card" class="card-image">
 
-    <!-- क्लिकेबल लिंक्स -->
+    <!-- 1. ऊपर दिए गए फोन नंबरों पर डायरेक्ट कॉल के लिंक्स -->
     <a href="tel:9828028286" class="hotspot phone-1" title="Call 9828028286"></a>
     <a href="tel:7425061880" class="hotspot phone-2" title="Call 7425061880"></a>
-    <a href="https://wa.me/919828028286?text=Hello%20Flazzor%20Interior,%20I%20want%20to%20inquire%20about%20modular%20furniture." class="hotspot whatsapp-float" target="_blank" title="WhatsApp Chat"></a>
-    
-    <!-- ईमेल और वेबसाइट के अलग-अलग हिस्से -->
-    <a href="mailto:abhishek28286@gmail.com" class="hotspot email-link" title="Email Us"></a>
-    <a href="https://www.flazzor.in" class="hotspot web-link" target="_blank" title="Visit Website"></a>
+
+    <!-- 2. नीचे दिए गए चार मुख्य बटन के लिंक्स -->
+    <a href="https://www.flazzor.in" class="hotspot btn-website" target="_blank" title="Website"></a>
+    <a href="mailto:abhishek28286@gmail.com" class="hotspot btn-email" title="Email"></a>
+    <a href="https://wa.me/919828028286?text=Hello,%20I%20want%20to%20inquire%20about%20interior%20works." class="hotspot btn-whatsapp" target="_blank" title="WhatsApp"></a>
+    <a href="https://www.facebook.com/flazzor" class="hotspot btn-facebook" target="_blank" title="Facebook"></a>
 </div>
+
+<!-- 📇 इनबिल्ट vCard (Save Contact Button) -->
+<a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AAbhishek%20Agrawal%0AORG%3AFlazzor%20Interiors%0ATEL%3BTYPE%3DCELL%3A%2B919828028286%0ATEL%3BTYPE%3DCELL%3A%2B917425061880%0AEMAIL%3Aabhishek28286%40gmail.com%0AURL%3Ahttps%3A%2F%2Fwww.flazzor.in%0AEND%3AVCARD" 
+   download="Abhishek_Flazzor_Interiors.vcf" 
+   class="save-contact-btn">
+   📇 Save Contact in Phone
+</a>
 
 </body>
 </html>
