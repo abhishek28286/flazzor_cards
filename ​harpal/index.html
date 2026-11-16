@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style & Creation - Digital Visiting Card</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0f19;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        .card-container {
+            position: relative;
+            width: 100%;
+            max-width: 750px;
+        }
+        .card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+        
+        .hotspot {
+            position: absolute;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.0); /* जरूरत पड़ने पर टेस्टिंग के लिए रंग देख सकते हैं */
+        }
+
+        /* कार्ड के दाईं तरफ ऊपर दिया गया फोन नंबर (डायरेक्ट कॉल के लिए) */
+        .call-top { bottom: 23%; right: 5%; width: 42%; height: 7%; }
+
+        /* सबसे नीचे वाली काली पट्टी के तीन लिंक्स (WhatsApp, Email, Call) */
+        .bottom-whatsapp { bottom: 2%; left: 3%; width: 30%; height: 9%; }
+        .bottom-email    { bottom: 2%; left: 35%; width: 33%; height: 9%; }
+        .bottom-call     { bottom: 2%; left: 70%; width: 27%; height: 9%; }
+
+        /* बड़ा 'Save Contact' बटन */
+        .save-contact-btn {
+            display: block;
+            width: 90%;
+            max-width: 350px;
+            margin: 20px auto;
+            background: #25d366;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            transition: 0.3s;
+        }
+        .save-contact-btn:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-container">
+    <!-- हर्पल जी की कार्ड इमेज (GitHub पर इसका नाम card.jpg रखें) -->
+    <img src="card.jpg" alt="Style & Creation Digital Visiting Card" class="card-image">
+
+    <!-- 1. ऊपर दिए गए फोन नंबर पर क्लिक करने से डायरेक्ट कॉल -->
+    <a href="tel:7568746833" class="hotspot call-top" title="Call 7568746833"></a>
+
+    <!-- 2. नीचे वाली काली पट्टी के तीनों बटन्स -->
+    <a href="https://wa.me/917568746833?text=Hello,%20I%20want%20to%20inquire%20about%20furniture." class="hotspot bottom-whatsapp" target="_blank" title="WhatsApp"></a>
+    <a href="mailto:harpalsingh609@gmail.com" class="hotspot bottom-email" title="Email"></a>
+    <a href="tel:7568746833" class="hotspot bottom-call" title="Call"></a>
+</div>
+
+<!-- 📇 इनबिल्ट vCard (Save Contact Button) - हर्पल जी का पूरा डेटा -->
+<a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AHarpal%20Singh%20Arora%0AORG%3AStyle%20%26%20Creation%0ATEL%3BTYPE%3DCELL%3A%2B917568746833%0AEMAIL%3Aharpalsingh609%40gmail.com%0AADR%3A%3B%3BCaladwas%20Road%2C%20Rani%20Ji%20ki%20bawari%3BUdaipur%3BRajasthan%3B313003%3BIndia%0AEND%3AVCARD" 
+   download="Harpal_Singh_Style_Creation.vcf" 
+   class="save-contact-btn">
+   📇 Save Contact in Phone
+</a>
+
+</body>
+</html>
