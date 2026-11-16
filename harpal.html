@@ -43,12 +43,16 @@
         .bottom-email    { bottom: 2%; left: 35%; width: 33%; height: 9%; }
         .bottom-call     { bottom: 2%; left: 70%; width: 27%; height: 9%; }
 
-        /* बड़ा 'Save Contact' बटन */
-        .save-contact-btn {
-            display: block;
+        /* सेव कांटेक्ट एरिया */
+        .save-container {
+            text-align: center;
             width: 90%;
             max-width: 350px;
             margin: 20px auto;
+        }
+        .save-contact-btn {
+            display: block;
+            width: 100%;
             background: #25d366;
             color: white;
             text-align: center;
@@ -64,12 +68,17 @@
             background: #1ebe5d;
             transform: translateY(-2px);
         }
+        .save-hint {
+            color: #a0aec0;
+            font-size: 12px;
+            margin-top: 8px;
+        }
     </style>
 </head>
 <body>
 
 <div class="card-container">
-    <!-- हर्पल जी की कार्ड इमेज (फाइल का नाम harpal.jpg रखें) -->
+    <!-- हर्पल जी की कार्ड इमेज -->
     <img src="harpal.jpg" alt="Style & Creation Digital Visiting Card" class="card-image">
 
     <!-- 1. ऊपर दिए गए फोन नंबर पर क्लिक करने से डायरेक्ट कॉल -->
@@ -81,12 +90,15 @@
     <a href="tel:7568746833" class="hotspot bottom-call" title="Call"></a>
 </div>
 
-<!-- 📇 इनबिल्ट vCard (Save Contact Button) - हर्पल जी का पूरा डेटा -->
-<a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AHarpal%20Singh%20Arora%0AORG%3AStyle%20%26%20Creation%0ATEL%3BTYPE%3DCELL%3A%2B917568746833%0AEMAIL%3Aharpalsingh609%40gmail.com%0AADR%3A%3B%3BCaladwas%20Road%2C%20Rani%20Ji%20ki%20bawari%3BUdaipur%3BRajasthan%3B313003%3BIndia%0AEND%3AVCARD" 
-   download="Harpal_Singh_Style_Creation.vcf" 
-   class="save-contact-btn">
-   📇 Save Contact in Phone
-</a>
+<!-- 📇 इनबिल्ट vCard (Save Contact Button with Instruction) -->
+<div class="save-container">
+    <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AHarpal%20Singh%20Arora%0AORG%3AStyle%20%26%20Creation%0ATEL%3BTYPE%3DCELL%3A%2B917568746833%0AEMAIL%3Aharpalsingh609%40gmail.com%0AADR%3A%3B%3BCaladwas%20Road%2C%20Rani%20Ji%20ki%20bawari%3BUdaipur%3BRajasthan%3B313003%3BIndia%0AEND%3AVCARD" 
+       download="Harpal_Singh_Style_Creation.vcf" 
+       class="save-contact-btn">
+       📇 Save Contact in Phone
+    </a>
+    <div class="save-hint">बटन दबाकर डाउनलोड फाइल पर क्लिक करें, नंबर तुरंत सेव हो जाएगा।</div>
+</div>
 
 </body>
 </html>
