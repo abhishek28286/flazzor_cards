@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0f19">
+  <title>Naveen Kumar | ARTIZIA Quartz Masterpieces</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px 12px;
+      min-height: 100vh;
+      background: #0b0f19;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+    .card-container {
+      position: relative;
+      width: 100%;
+      max-width: 850px;
+      line-height: 0;
+    }
+    .card-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.65);
+    }
+    .hotspot {
+      position: absolute;
+      display: block;
+      z-index: 2;
+      cursor: pointer;
+      background: transparent;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hotspot:focus-visible {
+      outline: 3px solid #ffd45a;
+      outline-offset: -3px;
+      border-radius: 8px;
+    }
+    /* Footer bar: Website | Email | WhatsApp | Call */
+    .btn-website  { left: 0%;    top: 83.5%; width: 31.8%; height: 16.5%; }
+    .btn-email    { left: 31.8%; top: 83.5%; width: 36.8%; height: 16.5%; }
+    .btn-whatsapp { left: 68.6%; top: 83.5%; width: 14.1%; height: 16.5%; }
+    .btn-call     { left: 82.7%; top: 83.5%; width: 17.3%; height: 16.5%; }
+    /* The large mobile number beside Naveen's name is clickable too. */
+    .phone-number { left: 59%; top: 29.5%; width: 37%; height: 12%; }
+    .save-contact-btn {
+      display: block;
+      width: min(90%, 350px);
+      margin: 20px auto 0;
+      padding: 14px 20px;
+      border-radius: 30px;
+      background: #c99b2e;
+      color: #101722;
+      text-align: center;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(201,155,46,.25);
+    }
+    .save-contact-btn:hover { background: #e0b64f; }
+  </style>
+</head>
+<body>
+  <main class="card-container" aria-label="Naveen Kumar digital visiting card">
+    <img src="naveen.jpg" alt="Naveen Kumar, Area Sales Manager, ARTIZIA Quartz Masterpieces" class="card-image">
+
+    <a class="hotspot phone-number" href="tel:+918952815800" aria-label="Call Naveen Kumar"></a>
+
+    <a class="hotspot btn-website" href="https://www.artizia.co.in/" target="_blank" rel="noopener noreferrer" aria-label="Open ARTIZIA website"></a>
+    <a class="hotspot btn-email" href="mailto:nnaveen05@gmail.com" aria-label="Email Naveen Kumar"></a>
+    <a class="hotspot btn-whatsapp" href="https://wa.me/918952815800" target="_blank" rel="noopener noreferrer" aria-label="Chat with Naveen Kumar on WhatsApp"></a>
+    <a class="hotspot btn-call" href="tel:+918952815800" aria-label="Call Naveen Kumar"></a>
+  </main>
+
+  <a class="save-contact-btn"
+     href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3ANaveen%20Kumar%0AORG%3AARTIZIA%20Quartz%20Masterpieces%0ATITLE%3AArea%20Sales%20Manager%0ATEL%3BTYPE%3DCELL%3A%2B918952815800%0AEMAIL%3Annaveen05%40gmail.com%0AURL%3Ahttps%3A%2F%2Fwww.artizia.co.in%2F%0AADR%3BTYPE%3DWORK%3A%3B%3BPlot%20number%20PA008-020-023%2C%20Mahindra%20World%20City%2C%20Bhambhoriya%2C%20Sanganer%2C%20Jaipur%3B%3BRajasthan%3B302037%3BIndia%0AEND%3AVCARD"
+     download="Naveen_Kumar_ARTIZIA.vcf">
+    &#128203; Save Contact in Phone
+  </a>
+</body>
+</html>
